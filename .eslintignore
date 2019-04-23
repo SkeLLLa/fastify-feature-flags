@@ -1,0 +1,9 @@
+dist/
+deploy/
+build/
+logs/
+coverage/
+node_modules/
+.idea/
+.vscode/
+**/*.xxx.js

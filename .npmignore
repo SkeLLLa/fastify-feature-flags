@@ -1,0 +1,7 @@
+__test__/
+coverage/
+.eslint*
+CHANGELOG.md
+jest*
+.vscode/
+docs/
