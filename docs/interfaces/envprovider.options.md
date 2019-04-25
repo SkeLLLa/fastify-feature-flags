@@ -1,4 +1,4 @@
-[fastify-feature-flags](../README.md) > [ConfigProvider](../classes/configprovider.md) > [Options](../interfaces/configprovider.options.md)
+[fastify-feature-flags](../README.md) > [EnvProvider](../classes/envprovider.md) > [Options](../interfaces/envprovider.options.md)
 
 # Interface: Options
 
@@ -12,8 +12,8 @@
 
 ### Properties
 
-* [fastify](configprovider.options.md#fastify)
-* [prefix](configprovider.options.md#prefix)
+* [fastify](envprovider.options.md#fastify)
+* [prefix](envprovider.options.md#prefix)
 
 ---
 
@@ -32,13 +32,13 @@
 ___
 <a id="prefix"></a>
 
-###  prefix
+### `<Optional>` prefix
 
-**● prefix**: *`string`*
+**● prefix**: *`undefined` \| `string`*
 
-*Defined in providers/config.ts:9*
+*Defined in providers/env.ts:8*
 
-Config prefix for flags
+Prefix for env var filtering
 
 ___
 

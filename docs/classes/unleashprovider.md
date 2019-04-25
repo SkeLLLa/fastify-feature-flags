@@ -1,31 +1,31 @@
-[fastify-feature-flags](../README.md) > [ConfigProvider](../classes/configprovider.md)
+[fastify-feature-flags](../README.md) > [UnleashProvider](../classes/unleashprovider.md)
 
-# Class: ConfigProvider
+# Class: UnleashProvider
 
 ## Hierarchy
 
  [GenericProvider](genericprovider.md)
 
-**↳ ConfigProvider**
+**↳ UnleashProvider**
 
 ## Index
 
 ### Interfaces
 
-* [Options](../interfaces/configprovider.options.md)
+* [Options](../interfaces/unleashprovider.options.md)
 
 ### Constructors
 
-* [constructor](configprovider.md#constructor)
+* [constructor](unleashprovider.md#constructor)
 
 ### Properties
 
-* [conf](configprovider.md#conf)
-* [options](configprovider.md#options-1)
+* [instance](unleashprovider.md#instance)
+* [options](unleashprovider.md#options-1)
 
 ### Methods
 
-* [isEnabled](configprovider.md#isenabled)
+* [isEnabled](unleashprovider.md#isenabled)
 
 ---
 
@@ -35,11 +35,11 @@
 
 ###  constructor
 
-⊕ **new ConfigProvider**(options: *`Options`*): [ConfigProvider](configprovider.md)
+⊕ **new UnleashProvider**(options: *`Options`*): [UnleashProvider](unleashprovider.md)
 
 *Overrides [GenericProvider](genericprovider.md).[constructor](genericprovider.md#constructor)*
 
-*Defined in providers/config.ts:14*
+*Defined in providers/unleash.ts:10*
 
 **Parameters:**
 
@@ -47,23 +47,19 @@
 | ------ | ------ |
 | options | `Options` |
 
-**Returns:** [ConfigProvider](configprovider.md)
+**Returns:** [UnleashProvider](unleashprovider.md)
 
 ___
 
 ## Properties
 
-<a id="conf"></a>
+<a id="instance"></a>
 
-### `<Private>` conf
+### `<Private>` instance
 
-**● conf**: *`object`*
+**● instance**: *`Unleash`*
 
-*Defined in providers/config.ts:14*
-
-#### Type declaration
-
-[key: `string`]: `boolean` \| `string`
+*Defined in providers/unleash.ts:10*
 
 ___
 <a id="options-1"></a>
@@ -84,17 +80,18 @@ ___
 
 ###  isEnabled
 
-▸ **isEnabled**(feature: *`string`*): `Promise`<`boolean`>
+▸ **isEnabled**(feature: *`string`*, context?: *`any`*): `Promise`<`boolean`>
 
 *Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
 
-*Defined in providers/config.ts:20*
+*Defined in providers/unleash.ts:25*
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
 | feature | `string` |
+| `Optional` context | `any` |
 
 **Returns:** `Promise`<`boolean`>
 

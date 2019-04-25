@@ -8,7 +8,15 @@
 
 ↳  [ConfigProvider](configprovider.md)
 
+↳  [EnvProvider](envprovider.md)
+
+↳  [UnleashProvider](unleashprovider.md)
+
 ## Index
+
+### Interfaces
+
+* [Options](../interfaces/genericprovider.options.md)
 
 ### Constructors
 
@@ -16,11 +24,10 @@
 
 ### Properties
 
-* [options](genericprovider.md#options)
+* [options](genericprovider.md#options-1)
 
 ### Methods
 
-* [checkEnabled](genericprovider.md#checkenabled)
 * [isEnabled](genericprovider.md#isenabled)
 
 ---
@@ -31,15 +38,15 @@
 
 ###  constructor
 
-⊕ **new GenericProvider**(options?: *`any`*): [GenericProvider](genericprovider.md)
+⊕ **new GenericProvider**(options: *[Options](../interfaces/genericprovider.options.md)*): [GenericProvider](genericprovider.md)
 
-*Defined in providers/generic.ts:5*
+*Defined in providers/generic.ts:10*
 
 **Parameters:**
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| `Optional` options | `any` |  Provider options |
+| options | [Options](../interfaces/genericprovider.options.md) |  Provider options |
 
 **Returns:** [GenericProvider](genericprovider.md)
 
@@ -47,47 +54,25 @@ ___
 
 ## Properties
 
-<a id="options"></a>
+<a id="options-1"></a>
 
 ### `<Protected>` options
 
-**● options**: *`any`*
+**● options**: *[Options](../interfaces/genericprovider.options.md)*
 
-*Defined in providers/generic.ts:5*
+*Defined in providers/generic.ts:10*
 
 ___
 
 ## Methods
 
-<a id="checkenabled"></a>
-
-###  checkEnabled
-
-▸ **checkEnabled**(feature: *`string`*, ...args: *`Array`<`any`>*): `Promise`<`void`>
-
-*Defined in providers/generic.ts:26*
-
-Checks if feature is enabled
-
-*__throws__*: FeatureError
-
-**Parameters:**
-
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| feature | `string` |  feature name |
-| `Rest` args | `Array`<`any`> |  any other options |
-
-**Returns:** `Promise`<`void`>
-
-___
 <a id="isenabled"></a>
 
 ###  isEnabled
 
-▸ **isEnabled**(_feature: *`string`*, ..._args: *`Array`<`any`>*): `Promise`<`boolean`>
+▸ **isEnabled**(_feature: *`string`*, _context?: *`any`*): `Promise`<`boolean`>
 
-*Defined in providers/generic.ts:17*
+*Defined in providers/generic.ts:22*
 
 Checks if feature is enabled
 
@@ -96,7 +81,7 @@ Checks if feature is enabled
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | _feature | `string` |  feature name |
-| `Rest` _args | `Array`<`any`> |  any other options |
+| `Optional` _context | `any` |  context used in feature check |
 
 **Returns:** `Promise`<`boolean`>
 

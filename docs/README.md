@@ -6,17 +6,20 @@
 ### Modules
 
 * ["fastify"](modules/_fastify_.md)
-* [FastifyFeatureSwitchPlugin](modules/fastifyfeatureswitchplugin.md)
+* [FastifyFeatureFlagsPlugin](modules/fastifyfeatureflagsplugin.md)
 
 ### Classes
 
 * [ConfigProvider](classes/configprovider.md)
+* [EnvProvider](classes/envprovider.md)
 * [FeatureError](classes/featureerror.md)
 * [GenericProvider](classes/genericprovider.md)
+* [UnleashProvider](classes/unleashprovider.md)
 
 ### Variables
 
-* [pluginName](#pluginname)
+* [DEFAULT_ERROR_CODE](#default_error_code)
+* [PLUGIN_NAME](#plugin_name)
 
 ### Functions
 
@@ -26,13 +29,22 @@
 
 ## Variables
 
-<a id="pluginname"></a>
+<a id="default_error_code"></a>
 
-### `<Const>` pluginName
+### `<Const>` DEFAULT_ERROR_CODE
 
-**● pluginName**: *"featureSwitch"* = "featureSwitch"
+**● DEFAULT_ERROR_CODE**: *`500`* = 500
 
-*Defined in index.ts:7*
+*Defined in index.ts:11*
+
+___
+<a id="plugin_name"></a>
+
+### `<Const>` PLUGIN_NAME
+
+**● PLUGIN_NAME**: *"featureFlags"* = "featureFlags"
+
+*Defined in index.ts:10*
 
 ___
 
@@ -42,16 +54,16 @@ ___
 
 ### `<Const>` fastifyFeatureSwitch
 
-▸ **fastifyFeatureSwitch**(fastify: *`FastifyInstance`*, options: *[Options](interfaces/fastifyfeatureswitchplugin.options.md)*): `Promise`<`void`>
+▸ **fastifyFeatureSwitch**(fastify: *`FastifyInstance`*, options: *[Options](interfaces/fastifyfeatureflagsplugin.options.md)*): `Promise`<`void`>
 
-*Defined in index.ts:37*
+*Defined in index.ts:42*
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
 | fastify | `FastifyInstance` |
-| options | [Options](interfaces/fastifyfeatureswitchplugin.options.md) |
+| options | [Options](interfaces/fastifyfeatureflagsplugin.options.md) |
 
 **Returns:** `Promise`<`void`>
 

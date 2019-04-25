@@ -1,4 +1,4 @@
-[fastify-feature-flags](../README.md) > [FastifyFeatureSwitchPlugin](../modules/fastifyfeatureswitchplugin.md) > [Plugin](../interfaces/fastifyfeatureswitchplugin.plugin.md)
+[fastify-feature-flags](../README.md) > [FastifyFeatureFlagsPlugin](../modules/fastifyfeatureflagsplugin.md) > [Plugin](../interfaces/fastifyfeatureflagsplugin.plugin.md)
 
 # Interface: Plugin
 
@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [providers](fastifyfeatureswitchplugin.plugin.md#providers)
+* [providers](fastifyfeatureflagsplugin.plugin.md#providers)
 
 ### Methods
 
-* [checkEnabled](fastifyfeatureswitchplugin.plugin.md#checkenabled)
-* [isEnabled](fastifyfeatureswitchplugin.plugin.md#isenabled)
+* [checkEnabled](fastifyfeatureflagsplugin.plugin.md#checkenabled)
+* [isEnabled](fastifyfeatureflagsplugin.plugin.md#isenabled)
 
 ---
 
@@ -27,7 +27,7 @@
 
 **● providers**: *`object`*
 
-*Defined in index.ts:11*
+*Defined in index.ts:15*
 
 #### Type declaration
 
@@ -41,11 +41,11 @@ ___
 
 ###  checkEnabled
 
-▸ **checkEnabled**(feature: *`string`*): `void`
+▸ **checkEnabled**(feature: *`string`*, context?: *`any`*): `void`
 
-*Defined in index.ts:24*
+*Defined in index.ts:28*
 
-Check if feature is enabled
+Check if feature is enabled and throws exception if not
 
 *__throws__*: Error if feature is not enabled
 
@@ -54,6 +54,7 @@ Check if feature is enabled
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | feature | `string` |  feature name |
+| `Optional` context | `any` |
 
 **Returns:** `void`
 true if feature enabled
@@ -63,9 +64,9 @@ ___
 
 ###  isEnabled
 
-▸ **isEnabled**(feature: *`string`*): `Promise`<`boolean`>
+▸ **isEnabled**(feature: *`string`*, context?: *`any`*): `Promise`<`boolean`>
 
-*Defined in index.ts:17*
+*Defined in index.ts:21*
 
 Check if feature is enabled
 
@@ -74,6 +75,7 @@ Check if feature is enabled
 | Name | Type | Description |
 | ------ | ------ | ------ |
 | feature | `string` |  feature name |
+| `Optional` context | `any` |
 
 **Returns:** `Promise`<`boolean`>
 true if feature enabled

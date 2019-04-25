@@ -1,31 +1,31 @@
-[fastify-feature-flags](../README.md) > [ConfigProvider](../classes/configprovider.md)
+[fastify-feature-flags](../README.md) > [EnvProvider](../classes/envprovider.md)
 
-# Class: ConfigProvider
+# Class: EnvProvider
 
 ## Hierarchy
 
  [GenericProvider](genericprovider.md)
 
-**↳ ConfigProvider**
+**↳ EnvProvider**
 
 ## Index
 
 ### Interfaces
 
-* [Options](../interfaces/configprovider.options.md)
+* [Options](../interfaces/envprovider.options.md)
 
 ### Constructors
 
-* [constructor](configprovider.md#constructor)
+* [constructor](envprovider.md#constructor)
 
 ### Properties
 
-* [conf](configprovider.md#conf)
-* [options](configprovider.md#options-1)
+* [conf](envprovider.md#conf)
+* [options](envprovider.md#options-1)
 
 ### Methods
 
-* [isEnabled](configprovider.md#isenabled)
+* [isEnabled](envprovider.md#isenabled)
 
 ---
 
@@ -35,11 +35,11 @@
 
 ###  constructor
 
-⊕ **new ConfigProvider**(options: *`Options`*): [ConfigProvider](configprovider.md)
+⊕ **new EnvProvider**(options: *`Options`*): [EnvProvider](envprovider.md)
 
 *Overrides [GenericProvider](genericprovider.md).[constructor](genericprovider.md#constructor)*
 
-*Defined in providers/config.ts:14*
+*Defined in providers/env.ts:13*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@
 | ------ | ------ |
 | options | `Options` |
 
-**Returns:** [ConfigProvider](configprovider.md)
+**Returns:** [EnvProvider](envprovider.md)
 
 ___
 
@@ -59,11 +59,11 @@ ___
 
 **● conf**: *`object`*
 
-*Defined in providers/config.ts:14*
+*Defined in providers/env.ts:13*
 
 #### Type declaration
 
-[key: `string`]: `boolean` \| `string`
+[key: `string`]: `string` \| `undefined`
 
 ___
 <a id="options-1"></a>
@@ -88,7 +88,7 @@ ___
 
 *Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
 
-*Defined in providers/config.ts:20*
+*Defined in providers/env.ts:31*
 
 **Parameters:**
 

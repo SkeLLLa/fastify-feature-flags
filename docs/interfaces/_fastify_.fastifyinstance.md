@@ -24,9 +24,9 @@
 
 ###  __computed
 
-**● __computed**: *[Plugin](fastifyfeatureswitchplugin.plugin.md)*
+**● __computed**: *[Plugin](fastifyfeatureflagsplugin.plugin.md)*
 
-*Defined in index.ts:76*
+*Defined in index.ts:92*
 
 Google cloud storage plugin
 
