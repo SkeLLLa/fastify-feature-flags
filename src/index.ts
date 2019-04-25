@@ -3,10 +3,14 @@ import * as http from 'http';
 import fastifyPlugin from 'fastify-plugin';
 import {GenericProvider} from './providers/generic';
 import {ConfigProvider} from './providers/config';
+import {EnvProvider} from './providers/env';
+import {UnleashProvider} from './providers/unleash';
+import {FeatureError} from './feature-error';
 
-const pluginName = 'featureFlags';
+const PLUGIN_NAME = 'featureFlags';
+const DEFAULT_ERROR_CODE = 500;
 
-declare namespace FastifyFeatureSwitchPlugin {
+declare namespace FastifyFeatureFlagsPlugin {
   export interface Plugin {
     providers: {[key: string]: typeof GenericProvider};
     /**
@@ -14,18 +18,19 @@ declare namespace FastifyFeatureSwitchPlugin {
      * @param feature feature name
      * @returns true if feature enabled
      */
-    isEnabled(feature: string): Promise<boolean>;
+    isEnabled(feature: string, context?: any): Promise<boolean>;
     /**
-     * Check if feature is enabled
+     * Check if feature is enabled and throws exception if not
      * @param feature feature name
      * @throws Error if feature is not enabled
      * @returns true if feature enabled
      */
-    checkEnabled(feature: string): void;
+    checkEnabled(feature: string, context?: any): void;
   }
 
   export interface Options {
     providers: Array<GenericProvider>;
+    errorCode: number;
   }
 }
 
@@ -33,35 +38,46 @@ const fastifyFeatureSwitch: Plugin<
   http.Server,
   http.IncomingMessage,
   http.ServerResponse,
-  FastifyFeatureSwitchPlugin.Options
-> = async function eventlogClient(
+  FastifyFeatureFlagsPlugin.Options
+> = async function featureFlags(
   fastify: FastifyInstance,
-  options: FastifyFeatureSwitchPlugin.Options
+  options: FastifyFeatureFlagsPlugin.Options
 ) {
-  const {providers} = options;
+  const {providers, errorCode = DEFAULT_ERROR_CODE} = options;
 
-  const isEnabled = async (feature: string): Promise<boolean> => {
+  const isEnabled = async (
+    feature: string,
+    context?: any
+  ): Promise<boolean> => {
     const result = await Promise.all(
-      providers.map((provider) => provider.isEnabled(feature))
+      providers.map((provider) => provider.isEnabled(feature, context))
     );
     return result.reduce((prev, curr) => prev && curr);
   };
 
-  const checkEnabled = async (feature: string): Promise<void> => {
-    await Promise.all(
-      providers.map((provider) => provider.checkEnabled(feature))
-    );
+  const checkEnabled = async (
+    feature: string,
+    context?: any
+  ): Promise<void> => {
+    const result = await isEnabled(feature, context);
+    if (!result) {
+      const err = new FeatureError('Feature disabled');
+      err.statusCode = errorCode;
+      throw err;
+    }
   };
 
-  const plugin: FastifyFeatureSwitchPlugin.Plugin = {
+  const plugin: FastifyFeatureFlagsPlugin.Plugin = {
     providers: {
-      ConfigProvider: ConfigProvider,
+      ConfigProvider,
+      EnvProvider,
+      UnleashProvider,
     },
     isEnabled,
     checkEnabled,
   };
 
-  fastify.decorate(pluginName, plugin);
+  fastify.decorate(PLUGIN_NAME, plugin);
 };
 
 declare module 'fastify' {
@@ -73,13 +89,13 @@ declare module 'fastify' {
     /**
      * Google cloud storage plugin
      */
-    [pluginName]: FastifyFeatureSwitchPlugin.Plugin;
+    [PLUGIN_NAME]: FastifyFeatureFlagsPlugin.Plugin;
   }
 }
 
-const FastifyFeatureSwitchPlugin = fastifyPlugin(fastifyFeatureSwitch, {
+const FastifyFeatureFlagsPlugin = fastifyPlugin(fastifyFeatureSwitch, {
   fastify: '>=1.0.0',
-  name: 'fastify-feature-switch',
+  name: 'fastify-feature-flags',
 });
 
-export = FastifyFeatureSwitchPlugin;
+export = FastifyFeatureFlagsPlugin;
