@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.1.0](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.0.1...v1.1.0) (2019-04-25)
+
+
+### Bug Fixes
+
+* **provider:** support sitings in config provider ([671b883](https://gitlab.com/m03geek/fastify-feature-flags/commit/671b883))
+
+
+### Features
+
+* **provider:** add env provider ([25b11c5](https://gitlab.com/m03geek/fastify-feature-flags/commit/25b11c5))
+* **provider:** add new providers ([f41d897](https://gitlab.com/m03geek/fastify-feature-flags/commit/f41d897))
+* **provider:** add unleash provider ([943fc1f](https://gitlab.com/m03geek/fastify-feature-flags/commit/943fc1f))
+
+
+
 ## [1.0.1](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.0.0...v1.0.1) (2019-04-23)
 
 
