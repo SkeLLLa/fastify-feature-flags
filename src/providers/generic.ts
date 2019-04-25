@@ -1,33 +1,25 @@
-import {FeatureError} from '../feature-error';
-export {FeatureError} from '../feature-error';
+import fastify from 'fastify';
+
+export declare namespace GenericProvider {
+  interface Options {
+    fastify: fastify.FastifyInstance;
+  }
+}
 
 export abstract class GenericProvider {
-  protected options: any;
+  protected options: GenericProvider.Options;
   /**
    * @param options Provider options
    */
-  constructor(options?: any) {
+  constructor(options: GenericProvider.Options) {
     this.options = options;
   }
   /**
    * Checks if feature is enabled
    * @param _feature feature name
-   * @param _args any other options
+   * @param _context context used in feature check
    */
-  async isEnabled(_feature: string, ..._args: Array<any>): Promise<boolean> {
+  async isEnabled(_feature: string, _context?: any): Promise<boolean> {
     return false;
-  }
-  /**
-   * Checks if feature is enabled
-   * @param feature feature name
-   * @param args any other options
-   * @throws FeatureError
-   */
-  async checkEnabled(feature: string, ...args: Array<any>): Promise<void> {
-    const result = await this.isEnabled(feature, ...args);
-    if (!result) {
-      throw new FeatureError('Feature disabled');
-    }
-    return;
   }
 }
