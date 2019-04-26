@@ -1,18 +1,21 @@
 import fastify from 'fastify';
 
-export declare namespace GenericProvider {
-  interface Options {
-    fastify: fastify.FastifyInstance;
-  }
-}
-
 export abstract class GenericProvider {
-  protected options: GenericProvider.Options;
+  protected options: any;
+  protected fastify: fastify.FastifyInstance;
   /**
    * @param options Provider options
    */
-  constructor(options: GenericProvider.Options) {
+  constructor(options: any) {
     this.options = options;
+  }
+
+  /**
+   * Attach fastify instance to provider
+   * @param f fastify instance
+   */
+  attachFastify(f: fastify.FastifyInstance) {
+    this.fastify = f;
   }
   /**
    * Checks if feature is enabled

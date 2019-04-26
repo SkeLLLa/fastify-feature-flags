@@ -1,7 +1,7 @@
 import {GenericProvider} from './generic';
 
 export declare namespace EnvProvider {
-  interface Options extends GenericProvider.Options {
+  interface Options {
     /**
      * Prefix for env var filtering
      */

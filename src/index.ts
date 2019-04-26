@@ -46,6 +46,9 @@ const fastifyFeatureSwitch: Plugin<
   options: FastifyFeatureFlagsPlugin.Options
 ) {
   const {providers, errorCode = DEFAULT_ERROR_CODE} = options;
+  providers.forEach((provider) => {
+    provider.attachFastify(fastify);
+  });
 
   const isEnabled = async (
     feature: string,

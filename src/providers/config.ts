@@ -2,7 +2,7 @@ import {GenericProvider} from './generic';
 import config from 'config';
 
 export declare namespace ConfigProvider {
-  interface Options extends GenericProvider.Options {
+  interface Options {
     /**
      * Config prefix for flags
      */
