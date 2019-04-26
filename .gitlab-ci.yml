@@ -49,6 +49,8 @@ node:latest:
 
 npm:
   stage: publish
+  dependencies:
+    - node:latest
   script:
     - VERSION_TAG=$([[ $CI_COMMIT_TAG == *"-rc"* ]] && echo "next" || echo "latest")
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
