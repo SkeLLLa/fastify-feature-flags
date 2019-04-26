@@ -59,7 +59,8 @@ const fastify = require('fastify');
 const app = fastify();
 
 const ffPlugin = require('fastify-feature-flags');
-app.register(ffPlugin, {providers: [new ffPlugin.ConfigProvider()]});
+const ConfigProvider = require('fastify-feature-flags/dist/providers/config');
+app.register(ffPlugin, {providers: [new ConfigProvider()]});
 ```
 
 Plugin adds an object with built-in providers and generic provider interface that you can extend. For checking features availability it adds two methods: `fastify.featureFlags.isEnabled` which returns `true` or `false` and `fastify.featureFlags.checkEnabled` which throws an error if feature is disabled. The list of built-in providers is available below.
@@ -74,7 +75,7 @@ Generic provider is an abstract class that you may extend to add new providers. 
 
 #### Config provider
 
-Reads feature flags from specified config section. Depends on [`config`](https://www.npmjs.com/package/config) module. It's constuctor consumes options object that contains `prefix` for config section where features are defined.
+Reads feature flags from specified config section. Depends on [`config`](https://www.npmjs.com/package/config) module. You should install it manually. It's constuctor consumes options object that contains `prefix` for config section where features are defined.
 
 Example:
 
@@ -90,7 +91,7 @@ module.exports = {
 
 Configuring provider:
 ```js
-const provider = new ffPlugin.ConfigProvider({
+const provider = new ConfigProvider({
   prefix: 'features',
 })
 ```
@@ -111,7 +112,7 @@ FEATURE_B = false
 
 Configuring provider:
 ```js
-const provider = new ffPlugin.EnvProvider({
+const provider = new EnvProvider({
   prefix: 'FEATURE_',
 })
 ```
@@ -120,13 +121,13 @@ Valid config values for feature to be enabled are: `"true"` or `"1"`.
 
 #### Unleash provider
 
-This provider relies on feature flags service [Unleash](https://github.com/Unleash/unleash). You may configure it separately, see instructions in their repo.
+This provider relies on feature flags service [Unleash](https://github.com/Unleash/unleash). You should install the [module](https://www.npmjs.com/package/unleash-client) manually.
 
 Example:
 
 Configuring provider:
 ```js
-const provider = new ffPlugin.UnleashProvider({
+const provider = new UnleashProvider({
   appName: 'my-fastify-app';
   url: 'https://unleash.example.com';
 })
@@ -145,9 +146,10 @@ Example:
 ```js
 const fastify = require('fastify')();
 const ffPlugin = require('fastify-feature-flags');
+const EnvProvider = require('fastify-feature-flags/dist/providers/env');
 
 fastify.register(ffPlugin, {
-  providers: [new ffPlugin.EnvProvider({prefix: 'FEATURE_'})]
+  providers: [new EnvProvider({prefix: 'FEATURE_'})]
 });
 
 fastify.get('/a', async (request, reply) => {

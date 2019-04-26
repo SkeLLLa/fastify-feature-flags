@@ -2,9 +2,6 @@ import {FastifyInstance, Plugin} from 'fastify';
 import * as http from 'http';
 import fastifyPlugin from 'fastify-plugin';
 import {GenericProvider} from './providers/generic';
-import {ConfigProvider} from './providers/config';
-import {EnvProvider} from './providers/env';
-import {UnleashProvider} from './providers/unleash';
 import {FeatureError} from './feature-error';
 
 const PLUGIN_NAME = 'featureFlags';
@@ -12,7 +9,6 @@ const DEFAULT_ERROR_CODE = 500;
 
 declare namespace FastifyFeatureFlagsPlugin {
   export interface Plugin {
-    providers: {[key: string]: typeof GenericProvider};
     /**
      * Check if feature is enabled
      * @param feature feature name
@@ -68,11 +64,6 @@ const fastifyFeatureSwitch: Plugin<
   };
 
   const plugin: FastifyFeatureFlagsPlugin.Plugin = {
-    providers: {
-      ConfigProvider,
-      EnvProvider,
-      UnleashProvider,
-    },
     isEnabled,
     checkEnabled,
   };
