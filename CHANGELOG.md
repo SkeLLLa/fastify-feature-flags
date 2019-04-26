@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.3](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.2...v1.2.3) (2019-04-26)
+
+
+### Bug Fixes
+
+* autoattach fastify to providers ([6982c79](https://gitlab.com/m03geek/fastify-feature-flags/commit/6982c79))
+* make error code optional ([4ae481d](https://gitlab.com/m03geek/fastify-feature-flags/commit/4ae481d))
+
+
+
 ## [1.2.2](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.1...v1.2.2) (2019-04-26)
 
 
