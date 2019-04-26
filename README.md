@@ -91,6 +91,7 @@ module.exports = {
 
 Configuring provider:
 ```js
+const ConfigProvider = require('fastify-feature-flags/dist/providers/config');
 const provider = new ConfigProvider({
   prefix: 'features',
 })
@@ -112,6 +113,7 @@ FEATURE_B = false
 
 Configuring provider:
 ```js
+const EnvProvider = require('fastify-feature-flags/dist/providers/env');
 const provider = new EnvProvider({
   prefix: 'FEATURE_',
 })
@@ -127,9 +129,10 @@ Example:
 
 Configuring provider:
 ```js
+const UnleashProvider = require('fastify-feature-flags/dist/providers/unleash');
 const provider = new UnleashProvider({
-  appName: 'my-fastify-app';
-  url: 'https://unleash.example.com';
+  appName: 'my-fastify-app',
+  url: 'https://unleash.example.com/api',
 })
 ```
 
