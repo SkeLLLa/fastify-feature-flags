@@ -25,8 +25,14 @@ declare namespace FastifyFeatureFlagsPlugin {
   }
 
   export interface Options {
+    /**
+     * Providers list
+     */
     providers: Array<GenericProvider>;
-    errorCode: number;
+    /**
+     * Error code for checkEnabled
+     */
+    errorCode?: number;
   }
 }
 
