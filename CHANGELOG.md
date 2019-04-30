@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.4](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.3...v1.2.4) (2019-04-30)
+
+
+### Bug Fixes
+
+* **provider:** unleash log fix ([baa7b65](https://gitlab.com/m03geek/fastify-feature-flags/commit/baa7b65))
+
+
+
 ## [1.2.3](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.2...v1.2.3) (2019-04-26)
 
 
