@@ -3,6 +3,7 @@ import fastify from 'fastify';
 export abstract class GenericProvider {
   protected options: any;
   protected fastify: fastify.FastifyInstance;
+  protected onFastifyAttached(): void {}
   /**
    * @param options Provider options
    */
@@ -14,8 +15,9 @@ export abstract class GenericProvider {
    * Attach fastify instance to provider
    * @param f fastify instance
    */
-  attachFastify(f: fastify.FastifyInstance) {
+  attachFastify(f: fastify.FastifyInstance): void {
     this.fastify = f;
+    this.onFastifyAttached();
   }
   /**
    * Checks if feature is enabled

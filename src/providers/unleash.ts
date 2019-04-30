@@ -8,9 +8,13 @@ export declare namespace UnleashProvider {
 
 export class UnleashProvider extends GenericProvider {
   private instance: Unleash;
+
   constructor(options: UnleashProvider.Options) {
     super(options);
-    this.instance = initialize(options);
+  }
+
+  onFastifyAttached() {
+    this.instance = initialize(this.options);
     this.instance.on('error', this.fastify.log.error);
     this.instance.on('warn', this.fastify.log.error);
     this.instance.on('ready', this.fastify.log.info);
