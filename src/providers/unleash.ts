@@ -15,9 +15,11 @@ export class UnleashProvider extends GenericProvider {
 
   onFastifyAttached() {
     this.instance = initialize(this.options);
-    this.instance.on('error', this.fastify.log.error);
-    this.instance.on('warn', this.fastify.log.error);
-    this.instance.on('ready', this.fastify.log.info);
+    this.instance.on('error', this.fastify.log.error.bind(this.fastify));
+    this.instance.on('warn', this.fastify.log.warn.bind(this.fastify));
+    this.instance.on('ready', () => {
+      this.fastify.log.info('[feature-flags]: Unleash provider ready');
+    });
 
     this.fastify.addHook('onClose', (_instance, done) => {
       this.instance.destroy();
