@@ -1,6 +1,6 @@
 {
   "name": "fastify-feature-flags",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Fastify feature flags plugin",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
