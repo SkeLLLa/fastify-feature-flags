@@ -1,6 +1,15 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.2.8](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.7...v1.2.8) (2019-05-29)
+
+
+### Bug Fixes
+
+* error log fix ([7906355](https://gitlab.com/m03geek/fastify-feature-flags/commit/7906355))
+
+
 
 ## [1.2.7](https://gitlab.com/m03geek/fastify-feature-flags/compare/v1.2.6...v1.2.7) (2019-04-30)
 
