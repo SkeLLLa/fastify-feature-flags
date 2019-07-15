@@ -1,102 +1,133 @@
-[fastify-feature-flags](../README.md) > [EnvProvider](../classes/envprovider.md)
+> **[fastify-feature-flags](../README.md)**
+
+[EnvProvider](envprovider.md) /
 
 # Class: EnvProvider
 
 ## Hierarchy
 
- [GenericProvider](genericprovider.md)
+* [GenericProvider](genericprovider.md)
 
-**↳ EnvProvider**
+  * **EnvProvider**
 
-## Index
+### Index
 
-### Interfaces
+#### Interfaces
 
 * [Options](../interfaces/envprovider.options.md)
 
-### Constructors
+#### Constructors
 
 * [constructor](envprovider.md#constructor)
 
-### Properties
+#### Properties
 
-* [conf](envprovider.md#conf)
-* [options](envprovider.md#options-1)
+* [conf](envprovider.md#private-conf)
+* [fastify](envprovider.md#protected-fastify)
+* [options](envprovider.md#protected-options)
 
-### Methods
+#### Methods
 
+* [attachFastify](envprovider.md#attachfastify)
 * [isEnabled](envprovider.md#isenabled)
-
----
+* [onFastifyAttached](envprovider.md#protected-onfastifyattached)
 
 ## Constructors
 
-<a id="constructor"></a>
-
 ###  constructor
 
-⊕ **new EnvProvider**(options: *`Options`*): [EnvProvider](envprovider.md)
+\+ **new EnvProvider**(`options`: [Options](../interfaces/envprovider.options.md)): *[EnvProvider](envprovider.md)*
 
 *Overrides [GenericProvider](genericprovider.md).[constructor](genericprovider.md#constructor)*
 
-*Defined in providers/env.ts:13*
+Defined in providers/env.ts:13
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| options | `Options` |
+Name | Type |
+------ | ------ |
+`options` | [Options](../interfaces/envprovider.options.md) |
 
-**Returns:** [EnvProvider](envprovider.md)
-
-___
+**Returns:** *[EnvProvider](envprovider.md)*
 
 ## Properties
 
-<a id="conf"></a>
+### `Private` conf
 
-### `<Private>` conf
+• **conf**: *object*
 
-**● conf**: *`object`*
+Defined in providers/env.ts:13
 
-*Defined in providers/env.ts:13*
+#### Type declaration:
 
-#### Type declaration
-
-[key: `string`]: `string` \| `undefined`
+● \[▪ **key**: *string*\]: string | undefined
 
 ___
-<a id="options-1"></a>
 
-### `<Protected>` options
+### `Protected` fastify
 
-**● options**: *[Options](../interfaces/genericprovider.options.md)*
+• **fastify**: *`FastifyInstance`*
 
-*Inherited from [GenericProvider](genericprovider.md).[options](genericprovider.md#options-1)*
+*Inherited from [GenericProvider](genericprovider.md).[fastify](genericprovider.md#protected-fastify)*
 
-*Defined in providers/generic.ts:10*
+Defined in providers/generic.ts:5
 
 ___
+
+### `Protected` options
+
+• **options**: *any*
+
+*Inherited from [GenericProvider](genericprovider.md).[options](genericprovider.md#protected-options)*
+
+Defined in providers/generic.ts:4
 
 ## Methods
 
-<a id="isenabled"></a>
+###  attachFastify
 
-###  isEnabled
+▸ **attachFastify**(`f`: `FastifyInstance`): *void*
 
-▸ **isEnabled**(feature: *`string`*): `Promise`<`boolean`>
+*Inherited from [GenericProvider](genericprovider.md).[attachFastify](genericprovider.md#attachfastify)*
 
-*Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
+Defined in providers/generic.ts:18
 
-*Defined in providers/env.ts:31*
+Attach fastify instance to provider
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| feature | `string` |
+Name | Type | Description |
+------ | ------ | ------ |
+`f` | `FastifyInstance` | fastify instance  |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *void*
 
 ___
 
+###  isEnabled
+
+▸ **isEnabled**(`feature`: string): *`Promise<boolean>`*
+
+*Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
+
+Defined in providers/env.ts:31
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`feature` | string |
+
+**Returns:** *`Promise<boolean>`*
+
+___
+
+### `Protected` onFastifyAttached
+
+▸ **onFastifyAttached**(): *void*
+
+*Inherited from [GenericProvider](genericprovider.md).[onFastifyAttached](genericprovider.md#protected-onfastifyattached)*
+
+Defined in providers/generic.ts:6
+
+**Returns:** *void*

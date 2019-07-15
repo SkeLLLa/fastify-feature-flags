@@ -1,99 +1,130 @@
-[fastify-feature-flags](../README.md) > [UnleashProvider](../classes/unleashprovider.md)
+> **[fastify-feature-flags](../README.md)**
+
+[UnleashProvider](unleashprovider.md) /
 
 # Class: UnleashProvider
 
 ## Hierarchy
 
- [GenericProvider](genericprovider.md)
+* [GenericProvider](genericprovider.md)
 
-**↳ UnleashProvider**
+  * **UnleashProvider**
 
-## Index
+### Index
 
-### Interfaces
+#### Interfaces
 
 * [Options](../interfaces/unleashprovider.options.md)
 
-### Constructors
+#### Constructors
 
 * [constructor](unleashprovider.md#constructor)
 
-### Properties
+#### Properties
 
-* [instance](unleashprovider.md#instance)
-* [options](unleashprovider.md#options-1)
+* [fastify](unleashprovider.md#protected-fastify)
+* [instance](unleashprovider.md#private-instance)
+* [options](unleashprovider.md#protected-options)
 
-### Methods
+#### Methods
 
+* [attachFastify](unleashprovider.md#attachfastify)
 * [isEnabled](unleashprovider.md#isenabled)
-
----
+* [onFastifyAttached](unleashprovider.md#onfastifyattached)
 
 ## Constructors
 
-<a id="constructor"></a>
-
 ###  constructor
 
-⊕ **new UnleashProvider**(options: *`Options`*): [UnleashProvider](unleashprovider.md)
+\+ **new UnleashProvider**(`options`: [Options](../interfaces/unleashprovider.options.md)): *[UnleashProvider](unleashprovider.md)*
 
 *Overrides [GenericProvider](genericprovider.md).[constructor](genericprovider.md#constructor)*
 
-*Defined in providers/unleash.ts:10*
+Defined in providers/unleash.ts:10
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| options | `Options` |
+Name | Type |
+------ | ------ |
+`options` | [Options](../interfaces/unleashprovider.options.md) |
 
-**Returns:** [UnleashProvider](unleashprovider.md)
-
-___
+**Returns:** *[UnleashProvider](unleashprovider.md)*
 
 ## Properties
 
-<a id="instance"></a>
+### `Protected` fastify
 
-### `<Private>` instance
+• **fastify**: *`FastifyInstance`*
 
-**● instance**: *`Unleash`*
+*Inherited from [GenericProvider](genericprovider.md).[fastify](genericprovider.md#protected-fastify)*
 
-*Defined in providers/unleash.ts:10*
-
-___
-<a id="options-1"></a>
-
-### `<Protected>` options
-
-**● options**: *[Options](../interfaces/genericprovider.options.md)*
-
-*Inherited from [GenericProvider](genericprovider.md).[options](genericprovider.md#options-1)*
-
-*Defined in providers/generic.ts:10*
+Defined in providers/generic.ts:5
 
 ___
+
+### `Private` instance
+
+• **instance**: *`Unleash`*
+
+Defined in providers/unleash.ts:10
+
+___
+
+### `Protected` options
+
+• **options**: *any*
+
+*Inherited from [GenericProvider](genericprovider.md).[options](genericprovider.md#protected-options)*
+
+Defined in providers/generic.ts:4
 
 ## Methods
 
-<a id="isenabled"></a>
+###  attachFastify
 
-###  isEnabled
+▸ **attachFastify**(`f`: `FastifyInstance`): *void*
 
-▸ **isEnabled**(feature: *`string`*, context?: *`any`*): `Promise`<`boolean`>
+*Inherited from [GenericProvider](genericprovider.md).[attachFastify](genericprovider.md#attachfastify)*
 
-*Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
+Defined in providers/generic.ts:18
 
-*Defined in providers/unleash.ts:25*
+Attach fastify instance to provider
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| feature | `string` |
-| `Optional` context | `any` |
+Name | Type | Description |
+------ | ------ | ------ |
+`f` | `FastifyInstance` | fastify instance  |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *void*
 
 ___
 
+###  isEnabled
+
+▸ **isEnabled**(`feature`: string, `context?`: any): *`Promise<boolean>`*
+
+*Overrides [GenericProvider](genericprovider.md).[isEnabled](genericprovider.md#isenabled)*
+
+Defined in providers/unleash.ts:30
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`feature` | string |
+`context?` | any |
+
+**Returns:** *`Promise<boolean>`*
+
+___
+
+###  onFastifyAttached
+
+▸ **onFastifyAttached**(): *void*
+
+*Overrides [GenericProvider](genericprovider.md).[onFastifyAttached](genericprovider.md#protected-onfastifyattached)*
+
+Defined in providers/unleash.ts:16
+
+**Returns:** *void*

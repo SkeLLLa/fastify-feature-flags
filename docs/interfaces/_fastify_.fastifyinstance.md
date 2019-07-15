@@ -1,34 +1,33 @@
-[fastify-feature-flags](../README.md) > ["fastify"](../modules/_fastify_.md) > [FastifyInstance](../interfaces/_fastify_.fastifyinstance.md)
+> **[fastify-feature-flags](../README.md)**
 
-# Interface: FastifyInstance
+["fastify"](../modules/_fastify_.md) / [FastifyInstance](_fastify_.fastifyinstance.md) /
+
+# Interface: FastifyInstance <**HttpServer, HttpRequest, HttpResponse**>
 
 ## Type parameters
-#### HttpServer 
-#### HttpRequest 
-#### HttpResponse 
+
+▪ **HttpServer**
+
+▪ **HttpRequest**
+
+▪ **HttpResponse**
+
 ## Hierarchy
 
-**FastifyInstance**
+* **FastifyInstance**
 
-## Index
+### Index
 
-### Properties
+#### Properties
 
 * [__computed](_fastify_.fastifyinstance.md#__computed)
 
----
-
 ## Properties
-
-<a id="__computed"></a>
 
 ###  __computed
 
-**● __computed**: *[Plugin](fastifyfeatureflagsplugin.plugin.md)*
+• **__computed**: *[Plugin](fastifyfeatureflagsplugin.plugin.md)*
 
-*Defined in index.ts:92*
+Defined in index.ts:92
 
 Google cloud storage plugin
-
-___
-

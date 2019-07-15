@@ -1,44 +1,25 @@
-[fastify-feature-flags](../README.md) > [ConfigProvider](../classes/configprovider.md) > [Options](../interfaces/configprovider.options.md)
+> **[fastify-feature-flags](../README.md)**
+
+[ConfigProvider](../classes/configprovider.md) / [Options](configprovider.options.md) /
 
 # Interface: Options
 
 ## Hierarchy
 
- [Options](genericprovider.options.md)
+* **Options**
 
-**↳ Options**
+### Index
 
-## Index
+#### Properties
 
-### Properties
-
-* [fastify](configprovider.options.md#fastify)
 * [prefix](configprovider.options.md#prefix)
-
----
 
 ## Properties
 
-<a id="fastify"></a>
-
-###  fastify
-
-**● fastify**: *`FastifyInstance`*
-
-*Overrides [Options](genericprovider.options.md).[fastify](genericprovider.options.md#fastify)*
-
-*Defined in providers/generic.ts:5*
-
-___
-<a id="prefix"></a>
-
 ###  prefix
 
-**● prefix**: *`string`*
+• **prefix**: *string*
 
-*Defined in providers/config.ts:9*
+Defined in providers/config.ts:9
 
 Config prefix for flags
-
-___
-

@@ -1,102 +1,89 @@
-[fastify-feature-flags](../README.md) > [FeatureError](../classes/featureerror.md)
+> **[fastify-feature-flags](../README.md)**
+
+[FeatureError](featureerror.md) /
 
 # Class: FeatureError
 
 ## Hierarchy
 
- `Error`
+* `Error`
 
-**↳ FeatureError**
+  * **FeatureError**
 
-## Index
+### Index
 
-### Constructors
+#### Constructors
 
 * [constructor](featureerror.md#constructor)
 
-### Properties
+#### Properties
 
 * [message](featureerror.md#message)
 * [name](featureerror.md#name)
-* [stack](featureerror.md#stack)
+* [stack](featureerror.md#optional-stack)
 * [statusCode](featureerror.md#statuscode)
-* [Error](featureerror.md#error)
-
----
+* [Error](featureerror.md#static-error)
 
 ## Constructors
 
-<a id="constructor"></a>
-
 ###  constructor
 
-⊕ **new FeatureError**(message?: *`undefined` \| `string`*): [FeatureError](featureerror.md)
+\+ **new FeatureError**(`message?`: undefined | string): *[FeatureError](featureerror.md)*
 
-*Defined in feature-error.ts:2*
+Defined in feature-error.ts:2
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` message | `undefined` \| `string` |
+Name | Type |
+------ | ------ |
+`message?` | undefined \| string |
 
-**Returns:** [FeatureError](featureerror.md)
-
-___
+**Returns:** *[FeatureError](featureerror.md)*
 
 ## Properties
 
-<a id="message"></a>
-
 ###  message
 
-**● message**: *`string`*
+• **message**: *string*
 
-*Inherited from Error.message*
+*Inherited from void*
 
-*Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964*
+Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
 
 ___
-<a id="name"></a>
 
 ###  name
 
-**● name**: *`string`*
+• **name**: *string*
 
-*Inherited from Error.name*
+*Inherited from void*
 
-*Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:963*
-
-___
-<a id="stack"></a>
-
-### `<Optional>` stack
-
-**● stack**: *`undefined` \| `string`*
-
-*Inherited from Error.stack*
-
-*Overrides Error.stack*
-
-*Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965*
+Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:963
 
 ___
-<a id="statuscode"></a>
+
+### `Optional` stack
+
+• **stack**? : *undefined | string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+
+___
 
 ###  statusCode
 
-**● statusCode**: *`number`*
+• **statusCode**: *number*
 
-*Defined in feature-error.ts:2*
-
-___
-<a id="error"></a>
-
-### `<Static>` Error
-
-**● Error**: *`ErrorConstructor`*
-
-*Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974*
+Defined in feature-error.ts:2
 
 ___
 
+### `Static` Error
+
+▪ **Error**: *`ErrorConstructor`*
+
+Defined in /home/m03geek/dev/igp/libs/fastify-feature-switch/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974

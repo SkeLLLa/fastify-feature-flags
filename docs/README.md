@@ -1,14 +1,13 @@
+> **[fastify-feature-flags](README.md)**
 
-#  fastify-feature-flags
+### Index
 
-## Index
-
-### Modules
+#### Modules
 
 * ["fastify"](modules/_fastify_.md)
 * [FastifyFeatureFlagsPlugin](modules/fastifyfeatureflagsplugin.md)
 
-### Classes
+#### Classes
 
 * [ConfigProvider](classes/configprovider.md)
 * [EnvProvider](classes/envprovider.md)
@@ -16,56 +15,44 @@
 * [GenericProvider](classes/genericprovider.md)
 * [UnleashProvider](classes/unleashprovider.md)
 
-### Variables
+#### Variables
 
-* [DEFAULT_ERROR_CODE](#default_error_code)
-* [PLUGIN_NAME](#plugin_name)
+* [DEFAULT_ERROR_CODE](README.md#const-default_error_code)
+* [PLUGIN_NAME](README.md#const-plugin_name)
 
-### Functions
+#### Functions
 
-* [fastifyFeatureSwitch](#fastifyfeatureswitch)
-
----
+* [fastifyFeatureSwitch](README.md#const-fastifyfeatureswitch)
 
 ## Variables
 
-<a id="default_error_code"></a>
+### `Const` DEFAULT_ERROR_CODE
 
-### `<Const>` DEFAULT_ERROR_CODE
+• **DEFAULT_ERROR_CODE**: *`500`* = 500
 
-**● DEFAULT_ERROR_CODE**: *`500`* = 500
-
-*Defined in index.ts:11*
+Defined in index.ts:8
 
 ___
-<a id="plugin_name"></a>
 
-### `<Const>` PLUGIN_NAME
+### `Const` PLUGIN_NAME
 
-**● PLUGIN_NAME**: *"featureFlags"* = "featureFlags"
+• **PLUGIN_NAME**: *"featureFlags"* = "featureFlags"
 
-*Defined in index.ts:10*
-
-___
+Defined in index.ts:7
 
 ## Functions
 
-<a id="fastifyfeatureswitch"></a>
+### `Const` fastifyFeatureSwitch
 
-### `<Const>` fastifyFeatureSwitch
+▸ **fastifyFeatureSwitch**(`fastify`: `FastifyInstance`, `options`: [Options](interfaces/fastifyfeatureflagsplugin.options.md)): *`Promise<void>`*
 
-▸ **fastifyFeatureSwitch**(fastify: *`FastifyInstance`*, options: *[Options](interfaces/fastifyfeatureflagsplugin.options.md)*): `Promise`<`void`>
-
-*Defined in index.ts:42*
+Defined in index.ts:44
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| fastify | `FastifyInstance` |
-| options | [Options](interfaces/fastifyfeatureflagsplugin.options.md) |
+Name | Type |
+------ | ------ |
+`fastify` | `FastifyInstance` |
+`options` | [Options](interfaces/fastifyfeatureflagsplugin.options.md) |
 
-**Returns:** `Promise`<`void`>
-
-___
-
+**Returns:** *`Promise<void>`*

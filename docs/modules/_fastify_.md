@@ -1,12 +1,11 @@
-[fastify-feature-flags](../README.md) > ["fastify"](../modules/_fastify_.md)
+> **[fastify-feature-flags](../README.md)**
+
+["fastify"](_fastify_.md) /
 
 # Module: "fastify"
 
-## Index
+### Index
 
-### Interfaces
+#### Interfaces
 
 * [FastifyInstance](../interfaces/_fastify_.fastifyinstance.md)
-
----
-

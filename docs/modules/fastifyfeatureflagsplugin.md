@@ -1,13 +1,12 @@
-[fastify-feature-flags](../README.md) > [FastifyFeatureFlagsPlugin](../modules/fastifyfeatureflagsplugin.md)
+> **[fastify-feature-flags](../README.md)**
+
+[FastifyFeatureFlagsPlugin](fastifyfeatureflagsplugin.md) /
 
 # Module: FastifyFeatureFlagsPlugin
 
-## Index
+### Index
 
-### Interfaces
+#### Interfaces
 
 * [Options](../interfaces/fastifyfeatureflagsplugin.options.md)
 * [Plugin](../interfaces/fastifyfeatureflagsplugin.plugin.md)
-
----
-

@@ -1,44 +1,25 @@
-[fastify-feature-flags](../README.md) > [EnvProvider](../classes/envprovider.md) > [Options](../interfaces/envprovider.options.md)
+> **[fastify-feature-flags](../README.md)**
+
+[EnvProvider](../classes/envprovider.md) / [Options](envprovider.options.md) /
 
 # Interface: Options
 
 ## Hierarchy
 
- [Options](genericprovider.options.md)
+* **Options**
 
-**↳ Options**
+### Index
 
-## Index
+#### Properties
 
-### Properties
-
-* [fastify](envprovider.options.md#fastify)
-* [prefix](envprovider.options.md#prefix)
-
----
+* [prefix](envprovider.options.md#optional-prefix)
 
 ## Properties
 
-<a id="fastify"></a>
+### `Optional` prefix
 
-###  fastify
+• **prefix**? : *undefined | string*
 
-**● fastify**: *`FastifyInstance`*
-
-*Overrides [Options](genericprovider.options.md).[fastify](genericprovider.options.md#fastify)*
-
-*Defined in providers/generic.ts:5*
-
-___
-<a id="prefix"></a>
-
-### `<Optional>` prefix
-
-**● prefix**: *`undefined` \| `string`*
-
-*Defined in providers/env.ts:8*
+Defined in providers/env.ts:8
 
 Prefix for env var filtering
-
-___
-

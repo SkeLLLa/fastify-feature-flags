@@ -1,38 +1,36 @@
-[fastify-feature-flags](../README.md) > [FastifyFeatureFlagsPlugin](../modules/fastifyfeatureflagsplugin.md) > [Options](../interfaces/fastifyfeatureflagsplugin.options.md)
+> **[fastify-feature-flags](../README.md)**
+
+[FastifyFeatureFlagsPlugin](../modules/fastifyfeatureflagsplugin.md) / [Options](fastifyfeatureflagsplugin.options.md) /
 
 # Interface: Options
 
 ## Hierarchy
 
-**Options**
+* **Options**
 
-## Index
+### Index
 
-### Properties
+#### Properties
 
-* [errorCode](fastifyfeatureflagsplugin.options.md#errorcode)
+* [errorCode](fastifyfeatureflagsplugin.options.md#optional-errorcode)
 * [providers](fastifyfeatureflagsplugin.options.md#providers)
-
----
 
 ## Properties
 
-<a id="errorcode"></a>
+### `Optional` errorCode
 
-###  errorCode
+• **errorCode**? : *undefined | number*
 
-**● errorCode**: *`number`*
+Defined in index.ts:35
 
-*Defined in index.ts:33*
+Error code for checkEnabled
 
 ___
-<a id="providers"></a>
 
 ###  providers
 
-**● providers**: *`Array`<[GenericProvider](../classes/genericprovider.md)>*
+• **providers**: *`Array<GenericProvider>`*
 
-*Defined in index.ts:32*
+Defined in index.ts:31
 
-___
-
+Providers list
